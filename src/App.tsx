@@ -9,8 +9,9 @@ import AppProvider from './hooks';
 
 const App: React.FC = () => (
   <Router>
-    <AppProvider />
-    <Routes />
+    <AppProvider>
+      <Routes />
+    </AppProvider>
     <GlobalStyles />
   </Router>
 );
