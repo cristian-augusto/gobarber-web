@@ -42,7 +42,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   });
 
   const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post('/sessions', { email, password });
+    const response = await api.post('sessions', { email, password });
 
     const { token, user } = response.data;
 
@@ -85,7 +85,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 export function useAuth(): AuthContextData {
   const context = useContext(AuthContext);
 
-  if (!context) throw new Error('useAuth must be used within an AuthProvider');
+  // if (!context) throw new Error('useAuth must be used within an AuthProvider');
 
   return context;
 }
